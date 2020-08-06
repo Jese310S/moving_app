@@ -7,3 +7,10 @@ one:
 two:
   name: MyString
   email: MyString
+
+
+#fixture for a valid user to use in testing
+michael:
+name: Michael Example
+email: michael@example.com
+password_digest: <%= User.digest('password') %>
