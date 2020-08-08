@@ -53,4 +53,12 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
    end
+
+   test "associated listings should be destroyed" do
+    @user.save
+    @user.listings.create!(comment: "Lorem ipsum")
+    assert_difference 'Listing.count', -1 do
+    @user.destroy
+    end
+  end
 end
