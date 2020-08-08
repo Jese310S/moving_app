@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_05_044852) do
+ActiveRecord::Schema.define(version: 2020_08_08_052251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "listings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.date "moving_date"
+    t.time "moving_time"
+    t.string "price"
+    t.text "comment"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "created_at"], name: "index_listings_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_listings_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -24,4 +38,5 @@ ActiveRecord::Schema.define(version: 2020_08_05_044852) do
     t.string "password_digest"
   end
 
+  add_foreign_key "listings", "users"
 end
