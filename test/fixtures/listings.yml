@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+house_move:
+  user: michael 
+  title: "moving house"
+  moving_date: 2020-08-08
+  moving_time: 2020-08-08 15:22:51
+  price: "coles gift card"
+  comment: "loremipsum"
+  image: MyString
+  created_at: <%= 10.minutes.ago %>
+
+most_recent:
+  user: michael
+  title: "moving van needed"
+  moving_date: 2020-08-08
+  moving_time: 2020-08-08 15:22:51
+  price: "large pizza"
+  comment: "need to borrow moving van"
+  image: MyString
+  created_at: <%= Time.zone.now %>
