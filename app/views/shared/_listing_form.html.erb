@@ -1,0 +1,20 @@
+<%= form_with(model: @listing, local: true) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+    <%= f.label :title%>
+    <%= f.text_field :title, class: 'form_control'%>
+
+    <%# <%= f.label :moving_date%>
+    <%# <%= f.date :moving_date, class: 'form_control'%> 
+
+    <%# <%= f.label :moving_time%>
+    <%# <%= f.time :time, class: 'form_control'%>
+
+    <%= f.label :price%>
+    <%= f.text_field :price, class: 'form_control'%>
+
+
+    <%= f.text_area :comment, placeholder: "Compose new listing...", class: 'form_control' %>
+</div>
+<%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

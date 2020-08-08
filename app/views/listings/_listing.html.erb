@@ -1,0 +1,12 @@
+<li id="listing-<%= listing.id %>">
+    <%= link_to gravatar_for(listing.user, size: 50), listing.user %>
+    <span class="content"><%= listing.title %></span>
+    <span class="content"><%= listing.price %></span>
+    <span class="user"><%= link_to listing.user.name, listing.user %></span>
+    <span class="content"><%= listing.comment %></span>
+    <span class="content"><%= listing.moving_date %></span>
+    <span class="content"><%= listing.moving_time %></span>
+    <span class="timestamp">
+    Posted <%= time_ago_in_words(listing.created_at) %> ago.
+</span>
+</li>
