@@ -27,7 +27,7 @@ class ListingsController < ApplicationController
 
 #strong params that permits only listing's content
     def listing_params
-        params.require(:listing).permit(:title, :image)
+        params.require(:listing).permit(:title, :image, :comment, :price)
     end
 
     def correct_user

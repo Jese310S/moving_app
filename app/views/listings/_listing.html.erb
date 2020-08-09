@@ -5,7 +5,7 @@
     <span class="user"><%= link_to listing.user.name, listing.user %></span>
     <span class="content">
         <%= listing.comment %>
-        <%= image_tag listing.image if listing.image.attached? %>
+        <%= image_tag listing.display_image if listing.image.attached? %>
     </span>
     <span class="content"><%= listing.moving_date %></span>
     <span class="content"><%= listing.moving_time %></span>
