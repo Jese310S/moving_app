@@ -14,6 +14,7 @@ gem 'puma', '~> 4.1'
 gem 'faker',  '2.11.0'
 gem 'will_paginate',  '3.3.0'
 gem 'bootstrap-will_paginate',  '1.0.0'
+gem 'active_storage_validations', '0.8.9'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
