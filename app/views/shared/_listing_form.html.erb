@@ -17,4 +17,7 @@
     <%= f.text_area :comment, placeholder: "Compose new listing...", class: 'form_control' %>
 </div>
 <%= f.submit "Post", class: "btn btn-primary" %>
+    <span class="image">
+        <%= f.file_field :image%>
+    </span>
 <% end %>

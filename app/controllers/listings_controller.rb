@@ -4,6 +4,7 @@ class ListingsController < ApplicationController
    
     def create
         @listing = current_user.listings.build(listing_params)
+        @listing.image.attach(params[:listing][:image])
         if @listing.save
             flash[:success] = "Listing created!"
             redirect_to root_url
@@ -26,7 +27,7 @@ class ListingsController < ApplicationController
 
 #strong params that permits only listing's content
     def listing_params
-        params.require(:listing).permit(:title)
+        params.require(:listing).permit(:title, :image)
     end
 
     def correct_user

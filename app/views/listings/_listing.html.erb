@@ -3,7 +3,10 @@
     <span class="content"><%= listing.title %></span>
     <span class="content"><%= listing.price %></span>
     <span class="user"><%= link_to listing.user.name, listing.user %></span>
-    <span class="content"><%= listing.comment %></span>
+    <span class="content">
+        <%= listing.comment %>
+        <%= image_tag listing.image if listing.image.attached? %>
+    </span>
     <span class="content"><%= listing.moving_date %></span>
     <span class="content"><%= listing.moving_time %></span>
     <span class="timestamp">
