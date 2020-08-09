@@ -8,5 +8,9 @@
     <span class="content"><%= listing.moving_time %></span>
     <span class="timestamp">
     Posted <%= time_ago_in_words(listing.created_at) %> ago.
-</span>
+    <% if current_user %>
+    <%= link_to "delete", listing, method: :delete,
+                    data: { confirm: "You sure?" } %>
+    <% end %>
+    </span>
 </li>
