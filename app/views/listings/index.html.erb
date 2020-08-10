@@ -1,0 +1,18 @@
+<h1>All Listings</h1>
+    <ul class="listings-index">
+        <% @listings.each do |listing| %>
+            <span class="user"><% @users.each do |user| %></span>
+            <li>
+            <%= gravatar_for user, size: 50 %>
+            <%= user.name %> 
+            <br>
+           <% end %>
+           <span><%= link_to listing.title, listing %></span>
+           <br>
+            <span><%= listing.comment %></span>
+            <span class="timestamp">
+                Posted <%= time_ago_in_words(listing.created_at) %> ago.
+            </span>
+            </li>
+        <% end %>
+    </ul>
