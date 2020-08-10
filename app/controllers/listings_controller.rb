@@ -2,6 +2,16 @@ class ListingsController < ApplicationController
     # before_action :logged_in_user, only: [:create, :destroy]
     before_action :correct_user, only: :destroy
    
+    def index
+        @users = User.all
+        @listings = Listing.all
+    end
+
+    def show
+        @listings = Listing.find(params[:id])
+        @user = @listings.user
+    end
+
     def create
         @listing = current_user.listings.build(listing_params)
         @listing.image.attach(params[:listing][:image])
@@ -27,7 +37,7 @@ class ListingsController < ApplicationController
 
 #strong params that permits only listing's content
     def listing_params
-        params.require(:listing).permit(:title, :image, :comment, :price)
+        params.require(:listing).permit(:title, :image, :comment, :price, :moving_time, :moving_date)
     end
 
     def correct_user
