@@ -12,8 +12,9 @@ class ListingsController < ApplicationController
         @user = @listings.user
     end
 
+    #create action for microposts
     def create
-        @listing = current_user.listings.build(listing_params)
+        @listing = current_user.listings.build(listing_params) #strong params
         @listing.image.attach(params[:listing][:image])
         if @listing.save
             flash[:success] = "Listing created!"
