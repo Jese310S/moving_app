@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user, only: [:edit, :update]
+                  
   def index
     @users = User.all.paginate(page: params[:page])
   end
@@ -17,7 +18,6 @@ class UsersController < ApplicationController
   def create 
     @user = User.new(user_params)
     if @user.save 
-      reset_session
       log_in @user
       flash[:success] = "Signup Successful, Welcome!"
       redirect_to @user
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "Profile updated"
-      redirect_to @user
+     redirect_to @user
     else
       render 'edit'
     end
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
   #confirms the correct user
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
+    redirect_to(root_url) unless current_user?(@user) == current_user
   end
 
 end
