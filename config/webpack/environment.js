@@ -1,5 +1,6 @@
 const { environment } = require('@rails/webpacker')
 
+// add jQueryconfiguration to webpack
 const webpack = require('webpack')
 environment.plugins.prepend('Provide',
     new webpack.ProvidePlugin({
