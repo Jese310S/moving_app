@@ -122,7 +122,7 @@ Listing:
 - Has many users
 - Has one image
 
-![screenshot](./app/assets/images/has-many.png)
+![screenshot](./app/assets/images/has-may.png)
 
 
 ### Discuss the database relations to be implemented in your application
